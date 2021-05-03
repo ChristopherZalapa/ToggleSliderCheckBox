@@ -1,4 +1,4 @@
-body {
+/* body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -39,5 +39,47 @@ input:checked + label {
 input:checked + label::after {
     transform:  translate3d(50px, 0, 0);
     background-color: #1d6269;
+} */
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 }
 
+#toggle-switch {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	background-color: rgb(45, 43, 43);
+	height: 50px;
+	width: 100px;
+	border-radius: 25px;
+	position: relative;
+	transition: all 0.4s ease-out;
+}
+
+label::after {
+	content: '';
+	position: absolute;
+	background-color: rgb(242, 242, 242);
+	width: 40px;
+	height: 40px;
+	top: 5px;
+	left: 5px;
+	border-radius: 50px;
+    transition: all .4s ease-out;
+}
+
+input:checked + label {
+	background-color: rgb(89, 89, 89);
+}
+
+input:checked + label::after {
+	transform: translate3d(50px, 0, 0);
+	background-color: grey;
+}
